@@ -1,15 +1,12 @@
-
-import './App.css'
+import "./App.css";
+import Homepage from "../src/pages/Homepage";
 
 function App() {
   return (
     <>
-      <div className='test'>
-      this is the beginning
-
-      </div>
+      <Homepage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
