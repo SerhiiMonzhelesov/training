@@ -1,17 +1,26 @@
 import { NavLink, Link } from "react-router-dom";
 import { StyledHeader } from "./Header.styled";
-import Container from "../../shared/Container/Container";
+import { HeaderContainer } from "./Header.styled";
 
 function Header() {
   return (
     <StyledHeader>
-      <Container>
+      <HeaderContainer>
         <nav>
           <Link to={"https://www.google.com"} target="blank">
-            fgdfgdf
+            Portfolio
+          </Link>
+          <Link to={"https://www.google.com"} target="blank">
+            Work experience
+          </Link>
+          <Link to={"https://www.google.com"} target="blank">
+            Education
+          </Link>
+          <Link to={"https://www.google.com"} target="blank">
+            Skills
           </Link>
         </nav>
-      </Container>
+      </HeaderContainer>
     </StyledHeader>
   );
 }
