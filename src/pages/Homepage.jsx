@@ -23,27 +23,19 @@ export default Homepage;
 
 const move = keyframes`
   0% {
-    width: 200px;
-    height: 200px;
+    transform: scale(1);
     top: 200px;
-    left: 200px;
+    left: 300px;
     opacity: 0.2;
-  }
-
-  50% {
-    width: 300px;
-    height: 300px;
-    top: 100px;
-    left: 100px;
-    opacity: 0.5;
+    filter:blur(5px)
   }
 
   100% {
-    width: 400px;
-    height: 400px;
+    transform: scale(2); /* 200px * 2 = 400px */
     top: 0;
-    left: 0;
+    left: 100px;
     opacity: 1;
+    filter: blur(0px)
   }
 `;
 
@@ -53,12 +45,15 @@ const MainContainer = styled(Container)`
 
   .img-thumbs {
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 0;
+    left: 200;
     width: 200px;
+    aspect-ratio: 1 / 1;
     opacity: 0.2;
-    animation: ${move} 1.5s linear forwards;
+    animation: ${move} 1.5s ease-in-out forwards;
+    transform-origin: top left;
     img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
