@@ -2,25 +2,23 @@ body {
   min-width: 320px;
   min-height: 100vh;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: rgba(65, 55, 55, 0.87);
-  background-color: #baa5a5;
+  color: rgba(50, 47, 47, 0.87);
+  background-color: #d7f0df;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  /*display: flex;
-  place-items: center;*/ 
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  /*color: #646cff;*/
   text-decoration: inherit;
 }
 a:hover {
@@ -42,4 +40,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
