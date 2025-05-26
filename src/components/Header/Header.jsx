@@ -1,7 +1,8 @@
-import { NavLink, Link } from "react-router-dom";
 import { StyledHeader } from "./Header.styled";
 import { HeaderContainer } from "./Header.styled";
 import { useEffect, useState } from "react";
+import AnimatedText from "../AnimText/AnimatedText";
+import headerNavData from "../../constans/headerNavData";
 
 function Header() {
   const fullText = "Serhii Monzhelesov";
@@ -25,6 +26,8 @@ function Header() {
     return () => {}; // нічого не очищаємо
   }, []);
 
+  let accumulatedDelay = 0;
+
   return (
     <StyledHeader>
       <HeaderContainer>
@@ -37,18 +40,27 @@ function Header() {
           {showCursor && <span className="cursor"></span>}
         </p>
         <nav>
-          <Link to={"https://www.google.com"} target="blank">
-            Portfolio
-          </Link>
-          <Link to={"https://www.google.com"} target="blank">
-            Work experience
-          </Link>
-          <Link to={"https://www.google.com"} target="blank">
-            Education
-          </Link>
-          <Link to={"https://www.google.com"} target="blank">
-            Skills
-          </Link>
+          {/*<AnimatedText text="Portfolio" />*/}
+          {/*headerNavData.map((item, i) => {
+            return <AnimatedText key={i} text={item.link_name} test={i} />;
+          })*/}
+          {headerNavData.map((item, index) => {
+            const component = (
+              <AnimatedText
+                key={index}
+                linkData={item}
+                baseDelay={accumulatedDelay}
+              />
+            );
+            // Оновлюємо затримку для наступного слова
+            accumulatedDelay += item.link_name.length * 0.035;
+            return component;
+          })}
+          {/*
+            <Link to={"https://www.google.com"} target="blank">
+              Portfolio
+            </Link>
+          */}
         </nav>
       </HeaderContainer>
     </StyledHeader>

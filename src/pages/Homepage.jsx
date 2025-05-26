@@ -20,7 +20,7 @@ function Homepage() {
           <div className="img-thumbs foto3">
             <img src={foto3} alt="i am3" className="img" />
           </div>
-          <div className="test">this is the beginning</div>
+          <div className="test"></div>
         </MainContainer>
       </main>
     </>
@@ -84,6 +84,7 @@ const move3 = keyframes`
 const MainContainer = styled(Container)`
   color: #402c2c;
   position: relative;
+  z-index: 1;
 
   .img-thumbs {
     position: absolute;
@@ -107,6 +108,7 @@ const MainContainer = styled(Container)`
     left: 150px;
     animation: ${move1} 2s ease-in-out forwards;
     transform-origin: top left;
+    z-index: 1;
   }
   .img-thumbs.foto2 {
     width: 100px;

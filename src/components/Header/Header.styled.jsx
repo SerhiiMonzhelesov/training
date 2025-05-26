@@ -52,8 +52,4 @@ export const HeaderContainer = styled(Container)`
   a {
     //color: white;
   }
-
-  a:hover {
-    color: red;
-  }
 `;
