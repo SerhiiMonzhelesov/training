@@ -30,11 +30,6 @@ const animateLetter = keyframes`
   }
 `;
 
-/*const AnimatedLetter = styled.span`
-  display: inline-block;
-  animation: ${animateLetter} 1s ease-out forwards;
-  animation-delay: ${({ delay }) => delay}s;
-`; */
 const AnimatedLetter = styled.span`
   display: inline-block;
   color: inherit;
