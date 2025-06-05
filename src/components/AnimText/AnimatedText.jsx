@@ -3,14 +3,12 @@ import styled, { keyframes } from "styled-components";
 
 const AnimatedText = ({ linkData, baseDelay = 0 }) => {
   return (
-    <StyledLink to={linkData.url} target="blank">
-      {linkData.link_name.split("").map((char, i) => {
-        return (
-          <AnimatedLetter key={i} delay={baseDelay + i * 0.035}>
-            {char === " " ? "\u00A0" : char}
-          </AnimatedLetter>
-        );
-      })}
+    <StyledLink to={linkData.url} target="_blank">
+      {linkData.link_name.split("").map((char, i) => (
+        <AnimatedLetter key={i} $delay={baseDelay + i * 0.035}>
+          {char === " " ? "\u00A0" : char}
+        </AnimatedLetter>
+      ))}
     </StyledLink>
   );
 };
@@ -37,7 +35,7 @@ const AnimatedLetter = styled.span`
   transform: translateY(1em);
   filter: blur(4px);
   animation: ${animateLetter} 0.6s ease-out forwards;
-  animation-delay: ${({ delay }) => delay}s;
+  animation-delay: ${({ $delay }) => $delay}s;
 `;
 
 const StyledLink = styled(Link)`
