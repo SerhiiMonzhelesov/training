@@ -32,8 +32,10 @@ const AnimatedLetter = styled.span`
   display: inline-block;
   color: inherit;
   opacity: 0;
+  overflow: hidden;
   transform: translateY(1em);
   filter: blur(4px);
+  text-shadow: 0px 18px 0 rgba(50, 47, 47, 0.87);
   animation: ${animateLetter} 0.6s ease-out forwards;
   animation-delay: ${({ $delay }) => $delay}s;
 `;
@@ -41,7 +43,7 @@ const AnimatedLetter = styled.span`
 const StyledLink = styled(Link)`
   color: inherit;
 
-  &:hover {
-    color: green;
-  }
+  /*&:hover span {
+   
+  }*/
 `;
